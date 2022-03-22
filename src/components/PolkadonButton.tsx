@@ -9,9 +9,9 @@ const PolkadonButton = ({ makeDonation }: PolkadonButtonProps) => {
     // TODO init modal with inputs
   };
 
-  const confirmDonation = (sender: string) => {
-    makeDonation(sender);
-  };
+  // const confirmDonation = (sender: string) => {
+  //   makeDonation(sender);
+  // };
 
   return <button onClick={initDonationModal}>Donate now!</button>;
 };

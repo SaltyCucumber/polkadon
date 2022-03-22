@@ -1,7 +1,8 @@
-import { memo, useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { utils } from 'ethers';
 import { ApiPromise, WsProvider } from '@polkadot/api';
 import { web3Accounts, web3Enable, web3FromAddress } from '@polkadot/extension-dapp';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import PolkadonButton from './PolkadonButton';
 
@@ -9,7 +10,7 @@ interface PolkadonProps {
   receiver: string;
 }
 
-const Polkadon = ({ receiver }: PolkadonProps) => {
+export const Polkadon = ({ receiver }: PolkadonProps) => {
   const [api, setApi] = useState<ApiPromise>();
 
   useEffect(() => {
@@ -39,5 +40,3 @@ const Polkadon = ({ receiver }: PolkadonProps) => {
 
   return <PolkadonButton makeDonation={makeDonation} />;
 };
-
-export default memo(Polkadon);
