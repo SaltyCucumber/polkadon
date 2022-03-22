@@ -1,3 +1,3 @@
 export const routes = {
-  demopage: '/polkadon',
+  demopage: '/react-polkadon',
 };

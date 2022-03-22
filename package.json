@@ -12,11 +12,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SaltyCucumber/polkadon.git"
+    "url": "git+https://github.com/SaltyCucumber/react-polkadon.git"
   },
   "author": "SaltyCucumber",
   "license": "MIT",
-  "homepage": "https://github.com/SaltyCucumber/polkadon#readme",
+  "homepage": "https://github.com/SaltyCucumber/react-polkadon#readme",
   "devDependencies": {
     "@babel/plugin-transform-react-jsx": "^7.17.3",
     "@babel/plugin-transform-runtime": "^7.17.0",
