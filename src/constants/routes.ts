@@ -1,3 +1,3 @@
 export const routes = {
-  homepage: '/polkadon',
+  demopage: '/polkadon',
 };
