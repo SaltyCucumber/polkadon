@@ -1,5 +1,6 @@
 import ReactDOM from 'react-dom';
 import { createGlobalStyle } from 'styled-components';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import App from './App';
 
@@ -16,3 +17,5 @@ ReactDOM.render(
   </>,
   document.getElementById('app'),
 );
+
+export * from './components/Polkadon';
