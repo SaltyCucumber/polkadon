@@ -1,7 +1,11 @@
 import { memo } from 'react';
+import styled from 'styled-components';
 
-import { initErrorTypes } from '../constants/errorTypes';
+import { initErrorTypes } from '../constants';
 
+const SInitError = styled.div`
+  padding: 10px 0;
+`;
 interface InitErrorProps {
   type: string;
 }
@@ -9,17 +13,17 @@ interface InitErrorProps {
 const InitError = ({ type }: InitErrorProps) => {
   if (type === initErrorTypes.NO_EXTENSION) {
     return (
-      <div>
+      <SInitError>
         Please download{' '}
         <a target='_blank' rel='noreferrer' href='https://polkadot.js.org/extension/'>
           Polkadot JS extension
         </a>
-      </div>
+      </SInitError>
     );
   }
 
   if (type === initErrorTypes.NO_ACCOUNT) {
-    return <div>No polkadot.js account detected, please add account</div>;
+    return <SInitError>No polkadot.js account detected, please add account</SInitError>;
   }
 
   return null;
