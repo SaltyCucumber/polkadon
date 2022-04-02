@@ -1,6 +1,6 @@
-import { NetworkData, supportedNetworks } from '../constants';
+import { supportedNetworks } from '../constants';
 
-export const getNetworkData = (networkName: string): NetworkData | null => {
+export const getNetworkData = (networkName: string) => {
   const foundNetwork = supportedNetworks.find((network) => network.networkName === networkName.toLowerCase());
 
   if (foundNetwork) {
