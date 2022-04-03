@@ -1,6 +1,17 @@
 export interface PolkadonConfig {
   modalTitle: string;
   networks: Network[];
+  buttonStyles: ButtonStyles;
+}
+
+export interface ButtonStyles {
+  width?: string;
+  height?: string;
+  color?: string;
+  backgroundColor?: string;
+  fontSize?: string;
+  borderRadius?: string;
+  boxShadowColor?: string;
 }
 
 export interface Network {

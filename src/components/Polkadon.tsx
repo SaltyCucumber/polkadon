@@ -2,19 +2,34 @@ import { useCallback, useState } from 'react';
 import { utils } from 'ethers';
 import { ApiPromise, WsProvider } from '@polkadot/api';
 import { web3Accounts, web3Enable, web3FromAddress } from '@polkadot/extension-dapp';
+import styled from 'styled-components';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import { Donation, DonationStatus, NetworkData, PolkadonConfig, SenderAccount } from '../constants';
-import { getNetworkData } from '../helpers';
+import { ButtonStyles, Donation, DonationStatus, NetworkData, PolkadonConfig, SenderAccount } from '../constants';
+import { defaultButtonStyles, getNetworkData } from '../helpers';
 import PolkadonModal from './PolkadonModal';
 import InitError from './InitError';
+
+const SDonationButton = styled.button<SDonationButtonProps>`
+  width: ${({ buttonStyles }) => `${buttonStyles.width ? buttonStyles.width : defaultButtonStyles.width}px`};
+  height: ${({ buttonStyles }) => `${buttonStyles.height ? buttonStyles.height : defaultButtonStyles.height}px`};
+  color: ${({ buttonStyles }) => (buttonStyles.color ? buttonStyles.color : defaultButtonStyles.color)};
+  background-color: ${({ buttonStyles }) => (buttonStyles.backgroundColor ? buttonStyles.backgroundColor : defaultButtonStyles.backgroundColor)};
+  font-size: ${({ buttonStyles }) => `${buttonStyles.fontSize ? buttonStyles.fontSize : defaultButtonStyles.fontSize}px`};
+  border-radius: ${({ buttonStyles }) => `${buttonStyles.borderRadius ? buttonStyles.borderRadius : defaultButtonStyles.borderRadius}px`};
+  border: 0;
+  box-shadow: 0 0 3px 0 ${({ buttonStyles }) => (buttonStyles.boxShadowColor ? buttonStyles.boxShadowColor : defaultButtonStyles.boxShadowColor)};
+`;
+
+interface SDonationButtonProps {
+  buttonStyles: ButtonStyles;
+}
 
 interface PolkadonProps {
   config: PolkadonConfig;
 }
 
 export const Polkadon = ({ config }: PolkadonProps) => {
-  // TODO validate config
   const { networks } = config;
   const [api, setApi] = useState<ApiPromise | null>(null);
   const [recipient, setRecipient] = useState('');
@@ -131,7 +146,9 @@ export const Polkadon = ({ config }: PolkadonProps) => {
 
   return (
     <>
-      <button onClick={initDonationModal}>Donate now</button>
+      <SDonationButton buttonStyles={config.buttonStyles} onClick={initDonationModal}>
+        Donate now
+      </SDonationButton>
       {initError && <InitError type={initError} />}
       <PolkadonModal
         config={config}
