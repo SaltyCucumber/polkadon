@@ -68,7 +68,7 @@ const PolkadonModal = ({
   };
 
   return (
-    <Modal show={showModal} onHide={handleClose}>
+    <Modal show={showModal} onHide={handleClose} data-testid='polkadon-modal'>
       <Modal.Header closeButton>
         <Modal.Title>{modalTitle}</Modal.Title>
       </Modal.Header>
@@ -77,7 +77,7 @@ const PolkadonModal = ({
         <Modal.Body>
           <SFormGroup controlId='donationForm.network'>
             <Form.Label>Network</Form.Label>
-            <Form.Select required onChange={selectNetwork}>
+            <Form.Select required onChange={selectNetwork} data-testid='select-network'>
               <option value=''>Select network</option>
               {networks.map((network) => (
                 <option key={network.networkName} value={network.networkName}>
