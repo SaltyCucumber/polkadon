@@ -1,7 +1,7 @@
 # react-polkadon
 
 ## Introduction
-This is an easy to use polkadot donation button React component  
+This is an easy to use POLKAdot DONation button React component  
 Complete with custom styles for the button  
 Supports Polkadot, Kusama, Westend and Rococo chains  
 
