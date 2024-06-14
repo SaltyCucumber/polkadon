@@ -16,11 +16,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SaltyCucumber/react-polkadon.git"
+    "url": "git+https://github.com/VadimSaveljev/react-polkadon.git"
   },
-  "author": "SaltyCucumber",
+  "author": "VadimSaveljev",
   "license": "MIT",
-  "homepage": "https://github.com/SaltyCucumber/react-polkadon#readme",
+  "homepage": "https://github.com/VadimSaveljev/react-polkadon#readme",
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
